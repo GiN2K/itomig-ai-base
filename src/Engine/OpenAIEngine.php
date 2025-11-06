@@ -24,6 +24,10 @@
 namespace Itomig\iTop\Extension\AIBase\Engine;
 
 use IssueLog;
+use Itomig\iTop\Extension\AIBase\Exception\NonExistingModelException;
+use LLPhant\Embeddings\EmbeddingGenerator\OpenAI\OpenAI3LargeEmbeddingGenerator;
+use LLPhant\Embeddings\EmbeddingGenerator\OpenAI\OpenAI3SmallEmbeddingGenerator;
+use LLPhant\Embeddings\EmbeddingGenerator\OpenAI\OpenAIADA002EmbeddingGenerator;
 use LLPhant\OpenAIConfig;
 use LLPhant\Chat\OpenAIChat;
 
@@ -79,6 +83,31 @@ class OpenAIEngine extends GenericAIEngine implements iAIEngineInterface
 		return $response;
 
 		// TODO error handling in LLPhant ( #2) ?
+	}
+
+	/**
+	 *  Returns the embedding vector for the given text based on the model configured in this engine.
+	 *
+	 * @throws \Exception
+	 */
+	public function GetEmbedding($text) : array
+	{
+		$config = new OpenAIConfig();
+		$config->apiKey = $this->apiKey;
+
+
+		if(!empty($this->model)) {
+			$config->model = $this->model;
+		}
+
+		$generator = match ($this->model) {
+			'text-embedding-ada-002' => new OpenAIADA002EmbeddingGenerator($config),
+			'text-embedding-3-small' => new OpenAI3SmallEmbeddingGenerator($config),
+			'text-embedding-3-large' => new OpenAI3LargeEmbeddingGenerator($config),
+			default => throw new NonExistingModelException("Model ".$this->model." not supported for embeddings."),
+		};
+
+		return $generator->embedText($text);
 	}
 
 

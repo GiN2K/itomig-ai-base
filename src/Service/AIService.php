@@ -178,4 +178,9 @@ class AIService
 		}
 		return $sDesiredAIEngineClass;
 	}
+
+	public function GetEmbedding($sMessage) : array
+	{
+		return $this->oAIEngine->getEmbedding($sMessage);
+	}
 }

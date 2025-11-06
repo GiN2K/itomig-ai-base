@@ -23,6 +23,7 @@
 
 namespace Itomig\iTop\Extension\AIBase\Engine;
 
+use Itomig\iTop\Extension\AIBase\Exception\NotImplementedException;
 use LLPhant\AnthropicConfig;
 use LLPhant\Chat\AnthropicChat;
 
@@ -68,5 +69,13 @@ class AnthropicAIEngine extends GenericAIEngine implements iAIEngineInterface
 
 		// TODO error handling in LLPhant: Catch LLPhantException ( #2) ?
 		return $response;
+	}
+
+	/**
+	 * @throws \Itomig\iTop\Extension\AIBase\Exception\NotImplementedException
+	 */
+	public function GetEmbedding($text): array
+	{
+		throw new NotImplementedException('not implemented yet');
 	}
 }
