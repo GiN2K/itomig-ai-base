@@ -88,6 +88,7 @@ class OpenAIEngine extends GenericAIEngine implements iAIEngineInterface
 	/**
 	 *  Returns the embedding vector for the given text based on the model configured in this engine.
 	 *
+	 * @throws \Itomig\iTop\Extension\AIBase\Exception\NonExistingModelException
 	 * @throws \Exception
 	 */
 	public function GetEmbedding($text) : array
@@ -109,6 +110,32 @@ class OpenAIEngine extends GenericAIEngine implements iAIEngineInterface
 
 		return $generator->embedText($text);
 	}
+
+
+	/**
+	 *  Returns the dimension of the embedding model.
+	 *
+	 * @throws \Itomig\iTop\Extension\AIBase\Exception\NonExistingModelException
+	 * @throws \Exception
+	 */
+	public function GetEmbeddingLength(): int
+	{
+		$config = new OpenAIConfig();
+		$config->apiKey = $this->apiKey;
+		if (!empty($this->model)) {
+			$config->model = $this->model;
+		}
+
+		$generator = match ($this->model) {
+			'text-embedding-ada-002' => new OpenAIADA002EmbeddingGenerator($config),
+			'text-embedding-3-small' => new OpenAI3SmallEmbeddingGenerator($config),
+			'text-embedding-3-large' => new OpenAI3LargeEmbeddingGenerator($config),
+			default => throw new NonExistingModelException('Model '.$this->model.' not supported for embeddings.'),
+		};
+
+		return $generator->getEmbeddingLength();
+	}
+
 
 
 

@@ -81,5 +81,10 @@ class MistralAIEngine extends GenericAIEngine implements iAIEngineInterface
 	{
 		throw new NotImplementedException('not implemented yet');
 	}
+	public function GetEmbeddingLength(): int
+	{
+		throw new NotImplementedException('not implemented yet');
+	}
+
 
 }
