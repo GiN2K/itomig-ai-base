@@ -25,7 +25,7 @@ namespace Itomig\iTop\Extension\AIBase\Engine;
 
 use Itomig\iTop\Extension\AIBase\Exception\NotImplementedException;
 use LLPhant\MistralAIConfig;
-use LLPhant\OpenAIConfig;
+use \OpenAIConfig;
 use LLPhant\Chat\MistralAIChat;
 
 class MistralAIEngine extends GenericAIEngine implements iAIEngineInterface
@@ -74,14 +74,7 @@ class MistralAIEngine extends GenericAIEngine implements iAIEngineInterface
 		return $response;
 	}
 
-	/**
-	 * @throws \Itomig\iTop\Extension\AIBase\Exception\NotImplementedException
-	 */
-	public function GetEmbedding($text): array
-	{
-		throw new NotImplementedException('not implemented yet');
-	}
-	public function GetEmbeddingLength(): int
+	public function GetEmbeddingGenerator()
 	{
 		throw new NotImplementedException('not implemented yet');
 	}

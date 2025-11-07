@@ -46,7 +46,6 @@ interface iAIEngineInterface
 	 */
 	public function GetCompletion($message, $systemInstruction = '') : string;
 
-	public function GetEmbedding($text) : array;
-	public function GetEmbeddingLength() : int;
 
+	public function GetEmbeddingGenerator();
 }

@@ -86,16 +86,10 @@ class OllamaAIEngine extends GenericAIEngine implements iAIEngineInterface
 		return $response;
 	}
 
-	/**
-	 * @throws \Itomig\iTop\Extension\AIBase\Exception\NotImplementedException
-	 */
-	public function GetEmbedding($text): array
-	{
-		throw new NotImplementedException("not implemented yet");
-	}
-	public function GetEmbeddingLength(): int
+
+
+	public function GetEmbeddingGenerator()
 	{
 		throw new NotImplementedException('not implemented yet');
 	}
-
 }

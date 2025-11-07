@@ -189,4 +189,9 @@ class AIService
 		return $this->oAIEngine->GetEmbeddingLength();
 
 	}
+
+	public function GetEmbeddingGenerator()
+	{
+		return $this->oAIEngine->GetEmbeddingGenerator();
+	}
 }
