@@ -128,6 +128,8 @@ return array(
     'Itomig\\iTop\\Extension\\AIBase\\Engine\\iAIEngineInterface' => $baseDir . '/src/Engine/iAIEngineInterface.php',
     'Itomig\\iTop\\Extension\\AIBase\\Exception\\AIConfigurationException' => $baseDir . '/src/Exception/AIConfigurationException.php',
     'Itomig\\iTop\\Extension\\AIBase\\Exception\\AIResponseException' => $baseDir . '/src/Exception/AIResponseException.php',
+    'Itomig\\iTop\\Extension\\AIBase\\Exception\\NonExistingModelException' => $baseDir . '/src/Exception/NonExistingModelException.php',
+    'Itomig\\iTop\\Extension\\AIBase\\Exception\\NotImplementedException' => $baseDir . '/src/Exception/NotImplementedException.php',
     'Itomig\\iTop\\Extension\\AIBase\\Helper\\AIBaseHelper' => $baseDir . '/src/Helper/AIBaseHelper.php',
     'Itomig\\iTop\\Extension\\AIBase\\Service\\AIService' => $baseDir . '/src/Service/AIService.php',
     'LLPhant\\AnthropicConfig' => $vendorDir . '/theodo-group/llphant/src/AnthropicConfig.php',

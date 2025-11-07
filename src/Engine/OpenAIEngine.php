@@ -85,7 +85,8 @@ class OpenAIEngine extends GenericAIEngine implements iAIEngineInterface
 		// TODO error handling in LLPhant ( #2) ?
 	}
 
-	public function GetEmbeddingGenerator() {
+	public function GetEmbeddingGenerator(): OpenAIADA002EmbeddingGenerator|OpenAI3SmallEmbeddingGenerator|OpenAI3LargeEmbeddingGenerator
+	{
 		$config = new OpenAIConfig();
 		$config->apiKey = $this->apiKey;
 

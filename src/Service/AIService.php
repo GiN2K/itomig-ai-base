@@ -180,18 +180,4 @@ class AIService
 		return $sDesiredAIEngineClass;
 	}
 
-	public function GetEmbedding($sMessage) : array
-	{
-		return $this->oAIEngine->GetEmbedding($sMessage);
-	}
-	public function GetEmbeddingLength(): int
-	{
-		return $this->oAIEngine->GetEmbeddingLength();
-
-	}
-
-	public function GetEmbeddingGenerator()
-	{
-		return $this->oAIEngine->GetEmbeddingGenerator();
-	}
 }

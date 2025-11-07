@@ -74,6 +74,9 @@ class MistralAIEngine extends GenericAIEngine implements iAIEngineInterface
 		return $response;
 	}
 
+	/**
+	 * @throws \Itomig\iTop\Extension\AIBase\Exception\NotImplementedException
+	 */
 	public function GetEmbeddingGenerator()
 	{
 		throw new NotImplementedException('not implemented yet');

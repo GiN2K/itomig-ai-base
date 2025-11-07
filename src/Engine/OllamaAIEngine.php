@@ -87,7 +87,9 @@ class OllamaAIEngine extends GenericAIEngine implements iAIEngineInterface
 	}
 
 
-
+	/**
+	 * @throws \Itomig\iTop\Extension\AIBase\Exception\NotImplementedException
+	 */
 	public function GetEmbeddingGenerator()
 	{
 		throw new NotImplementedException('not implemented yet');
