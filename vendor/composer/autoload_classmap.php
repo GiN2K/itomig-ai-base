@@ -132,6 +132,7 @@ return array(
     'Itomig\\iTop\\Extension\\AIBase\\Exception\\NotImplementedException' => $baseDir . '/src/Exception/NotImplementedException.php',
     'Itomig\\iTop\\Extension\\AIBase\\Helper\\AIBaseHelper' => $baseDir . '/src/Helper/AIBaseHelper.php',
     'Itomig\\iTop\\Extension\\AIBase\\Service\\AIService' => $baseDir . '/src/Service/AIService.php',
+    'Itomig\\iTop\\Extension\\AIBase\\Service\\EmbeddingService' => $baseDir . '/src/Service/EmbeddingService.php',
     'LLPhant\\AnthropicConfig' => $vendorDir . '/theodo-group/llphant/src/AnthropicConfig.php',
     'LLPhant\\Audio\\OpenAIAudio' => $vendorDir . '/theodo-group/llphant/src/Audio/OpenAIAudio.php',
     'LLPhant\\Audio\\OpenAIAudioModel' => $vendorDir . '/theodo-group/llphant/src/Audio/OpenAIAudioModel.php',

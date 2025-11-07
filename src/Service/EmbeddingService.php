@@ -1,9 +1,13 @@
 <?php
 
+namespace Itomig\iTop\Extension\AIBase\Service;
+
 use Combodo\iTop\Service\InterfaceDiscovery\InterfaceDiscovery;
 use Itomig\iTop\Extension\AIBase\Engine\iAIEngineInterface;
 use Itomig\iTop\Extension\AIBase\Exception\AIConfigurationException;
 use Itomig\iTop\Extension\AIBase\Helper\AIBaseHelper;
+use LLPhant\Embeddings\EmbeddingGenerator\EmbeddingGeneratorInterface;
+use MetaModel;
 
 /**
  * @copyright   Copyright (C) 2010-2025 Combodo SARL
@@ -15,7 +19,7 @@ class EmbeddingService
 
 	protected ?iAIEngineInterface $oAIEngine;
 
-	private object $embeddingGenerator;
+	private EmbeddingGeneratorInterface $embeddingGenerator;
 
 	public function __construct(?iAIEngineInterface $engine = null)
 	{
@@ -69,11 +73,11 @@ class EmbeddingService
 
 	public function GetEmbedding($sMessage) : array
 	{
-		return $this->embeddingGenerator->GetEmbedding($sMessage);
+		return $this->embeddingGenerator->embedText($sMessage);
 	}
 	public function GetEmbeddingLength(): int
 	{
-		return $this->embeddingGenerator->GetEmbeddingLength();
+		return $this->embeddingGenerator->getEmbeddingLength();
 
 	}
 

@@ -249,6 +249,7 @@ class ComposerStaticInitd8be68bed68b2e666ec5f78f725945c1
         'Itomig\\iTop\\Extension\\AIBase\\Exception\\NotImplementedException' => __DIR__ . '/../..' . '/src/Exception/NotImplementedException.php',
         'Itomig\\iTop\\Extension\\AIBase\\Helper\\AIBaseHelper' => __DIR__ . '/../..' . '/src/Helper/AIBaseHelper.php',
         'Itomig\\iTop\\Extension\\AIBase\\Service\\AIService' => __DIR__ . '/../..' . '/src/Service/AIService.php',
+        'Itomig\\iTop\\Extension\\AIBase\\Service\\EmbeddingService' => __DIR__ . '/../..' . '/src/Service/EmbeddingService.php',
         'LLPhant\\AnthropicConfig' => __DIR__ . '/..' . '/theodo-group/llphant/src/AnthropicConfig.php',
         'LLPhant\\Audio\\OpenAIAudio' => __DIR__ . '/..' . '/theodo-group/llphant/src/Audio/OpenAIAudio.php',
         'LLPhant\\Audio\\OpenAIAudioModel' => __DIR__ . '/..' . '/theodo-group/llphant/src/Audio/OpenAIAudioModel.php',
